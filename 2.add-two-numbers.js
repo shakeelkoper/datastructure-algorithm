@@ -38,6 +38,18 @@ function ListNode(val) {
   this.next = null;
 }
 
+ListNode.prototype.add = function(val) {
+  let curr = this
+  while(curr) {
+    if(!curr.next) {
+      curr.next = new ListNode(val)
+      return this
+    }
+    curr = curr.next 
+  }
+  return this
+}
+
 var addTwoNumbers = function(l1, l2) {
   var List = new ListNode(0);
   var head = List;
@@ -63,9 +75,9 @@ var addTwoNumbers = function(l1, l2) {
 
     sum = carry;
     carry = 0;
+    console.log('[Head]',head);
   }
-
-  return List.next;
+  return List.Listnext;
 };
 
-console.log(addTwoNumbers(list1, list2));
+console.log('[List]',addTwoNumbers(list1, list2));
